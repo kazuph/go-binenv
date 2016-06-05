@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-func Load() (envMap map[string]string, err error) {
-	data, err := Asset(".env")
+func Load(asset func(string) ([]byte, error)) (envMap map[string]string, err error) {
+	data, err := asset(".env")
 	if err != nil {
 		return nil, err
 	}
