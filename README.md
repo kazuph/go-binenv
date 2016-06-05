@@ -22,7 +22,7 @@ $ go-bindata .env
 
 Access env data
 
-```
+```go
 package main
 
 import (
